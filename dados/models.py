@@ -30,7 +30,7 @@ class Amostra(models.Model):
         return self.codigo_interno
 
 
-class Formulario_de_Amostra(models.Model):
+class FormularioDeAmostra(models.Model):
     id_solicitacao_de_serviço = models.CharField(max_length=200, help_text='')
     tipo_de_amostra = models.CharField(max_length=200, help_text='')
     data_de_coleta = models.DateField()
@@ -40,17 +40,14 @@ class Formulario_de_Amostra(models.Model):
         return self.tipo_de_amostra
 
 
-class Solicitacao_de_Servico(models.Model):
+class SolicitacaoDeServico(models.Model):
     nome_cliente = models.CharField(max_length=200, help_text='')
     empresa_avaliada = models.CharField(max_length=200, help_text='')
     lugar_de_coleta = models.CharField(max_length=200, help_text='')
     formulario_de_amostra = models.ForeignKey(Parametro, on_delete=models.CASCADE)
 
 
-class Lista_de_Servico(models.Model):
+class ListaDeServico(models.Model):
     descricao = models.CharField(max_length=200, help_text='')
 
 
-from django.db import models
-
-# Create your models here.
