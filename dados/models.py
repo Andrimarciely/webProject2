@@ -58,4 +58,7 @@ class SolicitacaoDeServico(models.Model):
 class ListaDeServico(models.Model):
     descricao = models.CharField(max_length=200, help_text='')
 
+    def __str__(self):
+       return self.descricao
+
 
